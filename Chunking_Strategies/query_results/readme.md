@@ -1,6 +1,4 @@
-Okay, here is a draft blog post in Markdown format summarizing the main tasks and findings from your comparative analysis of chunking strategies.
 
-```markdown
 # Chunking Showdown: Visualizing Naive vs. Late vs. Contextual Strategies for RAG
 
 Retrieval-Augmented Generation (RAG) systems rely heavily on finding the *right* information to feed into a Large Language Model (LLM). But how do we ensure our retrieval system understands the context of the documents it searches? Simple "naive" chunking often breaks vital connections, leading to poor retrieval.
@@ -124,15 +122,4 @@ Choosing the right chunking strategy is crucial for effective RAG. While Naive c
 
 Our visualization approach, using faceted spatial plots and similarity distribution plots generated across multiple queries, provides a powerful way to compare these methods directly. The results highlight that Late Chunking effectively leverages long-context embedding models to maintain coherence, while Contextual Chunking relies on LLM capabilities to enrich individual chunks. The best choice depends on your specific requirements regarding retrieval accuracy, computational budget, and system complexity.
 
----
 
-*This analysis was performed using Python and various data science/NLP libraries. The full code and generated report (including all plots) can be found here: [Link to your GitHub Repo - Optional]*
-```
-
-**How to Use:**
-
-1.  Copy this Markdown text.
-2.  Paste it into a `.md` file.
-3.  **Replace the placeholder image links/captions** with actual descriptions based on the plots you generated, or ideally, embed the actual PNG images if your blog platform supports it.
-4.  **(Optional)** Replace the placeholder GitHub link at the end.
-5.  You can then use this Markdown file for your blog, documentation, or report.
