@@ -2,6 +2,9 @@
 
 A comprehensive guide to prepare for interviews in Large Language Model roles.
 
+[Interactive Version]([https://github.com/llmgenai/LLMInterviewQuestions/tree/main](https://claude.site/artifacts/9a531f7f-d437-4b98-96b6-c8bfb876af2f)).
+
+
 ```
 ┌─────────────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │ 1. Prompt           │────▶│ 2. Retrieval    │────▶│ 3. Chunking     │
