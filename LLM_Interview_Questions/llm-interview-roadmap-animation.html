@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive LLM Interview Roadmap</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+    }
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .roadmap-container {
+      width: 90%;
+      max-width: 1200px;
+      position: relative;
+      margin-bottom: 50px;
+    }
+    
+    .roadmap {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+      position: relative;
+    }
+    
+    .row {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+    }
+    
+    .connector {
+      position: absolute;
+      background-color: rgba(255,255,255,0.6);
+      z-index: 1;
+      transition: width 0.8s ease, height 0.8s ease;
+    }
+    
+    .horizontal-connector {
+      height: 6px;
+      border-radius: 3px;
+    }
+    
+    .vertical-connector {
+      width: 6px;
+      border-radius: 3px;
+    }
+    
+    .node {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .node:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+    
+    .node-content {
+      text-align: center;
+      padding: 12px;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    
+    .node-number {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: white;
+      color: #1e3c72;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+    }
+    
+    .beginner {
+      background-color: #3498db;
+    }
+    
+    .intermediate {
+      background-color: #f39c12;
+    }
+    
+    .advanced {
+      background-color: #e74c3c;
+    }
+    
+    .expert {
+      background-color: #2c3e50;
+    }
+    
+    .detail-panel {
+      background-color: rgba(255,255,255,0.95);
+      color: #333;
+      padding: 25px;
+      border-radius: 15px;
+      margin-top: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      display: none;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      max-width: 800px;
+      width: 90%;
+    }
+    
+    .detail-panel.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .detail-title {
+      color: #1e3c72;
+      margin-top: 0;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+    }
+    
+    .detail-content {
+      line-height: 1.6;
+    }
+    
+    .detail-list {
+      margin-left: 20px;
+      padding-left: 0;
+    }
+    
+    .detail-list li {
+      margin-bottom: 8px;
+    }
+    
+    .hint {
+      margin-top: 0;
+      font-size: 0.8rem;
+      text-align: center;
+      color: rgba(255,255,255,0.8);
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    
+    @media (max-width: 768px) {
+      .node {
+        width: 90px;
+        height: 90px;
+        font-size: 0.8rem;
+      }
+      .node-content {
+        font-size: 0.75rem;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>RoadMap to Prepare for LLM Interview</h1>
+  <p class="hint">Click on any topic to explore detailed information</p>
+  
+  <div class="roadmap-container">
+    <div class="roadmap" id="roadmap">
+      <!-- Will be populated by JavaScript -->
+    </div>
+  </div>
+  
+  <div class="detail-panel" id="detailPanel">
+    <h2 class="detail-title" id="detailTitle">Topic Details</h2>
+    <div class="detail-content" id="detailContent">
+      Select a topic to see details
+    </div>
+  </div>
+  
+  <script>
+    // Define the roadmap data
+    const roadmapData = [
+      {
+        row: 1,
+        nodes: [
+          {
+            id: 1,
+            title: "Prompt engineering & basics of LLM",
+            level: "beginner",
+            details: `<p>This is the foundation of working with Large Language Models.</p>
+            <ul class="detail-list">
+              <li><strong>Prompt structure:</strong> Learn how to craft effective prompts with clear instructions, context, and examples.</li>
+              <li><strong>Few-shot learning:</strong> Understand how to provide examples to guide the model's responses.</li>
+              <li><strong>Chain of thought prompting:</strong> Guide models to break down complex reasoning tasks step by step.</li>
+              <li><strong>LLM architecture basics:</strong> Familiarize yourself with transformer architecture, attention mechanisms, and token processing.</li>
+              <li><strong>Knowledge representation:</strong> Understand how information is encoded in model weights.</li>
+              <li><strong>Common interview questions:</strong> "How would you craft a prompt for X task?", "Explain the difference between zero-shot, one-shot, and few-shot prompting."</li>
+            </ul>`
+          },
+          {
+            id: 2,
+            title: "Retrieval augmented generation (RAG)",
+            level: "beginner",
+            details: `<p>RAG combines retrieval systems with generative AI to produce more accurate and contextually relevant responses.</p>
+            <ul class="detail-list">
+              <li><strong>Document retrieval:</strong> Learn methods to fetch relevant information from external knowledge sources.</li>
+              <li><strong>Vector embeddings:</strong> Understand how text is converted to numerical representations for similarity matching.</li>
+              <li><strong>Context integration:</strong> Techniques to effectively combine retrieved information with model generation.</li>
+              <li><strong>Chunking strategies:</strong> Methods for breaking down documents for effective retrieval.</li>
+              <li><strong>Ranking and re-ranking:</strong> Approaches to prioritize the most relevant retrieved information.</li>
+              <li><strong>Common interview questions:</strong> "How would you implement RAG for a customer support system?", "What metrics would you use to evaluate a RAG system?"</li>
+            </ul>`
+          },
+          {
+            id: 3,
+            title: "Chunking strategies",
+            level: "intermediate",
+            details: `<p>Chunking is crucial for processing large documents and improving retrieval effectiveness in RAG systems.</p>
+            <ul class="detail-list">
+              <li><strong>Fixed-size chunking:</strong> Breaking text into chunks of predetermined token or character length.</li>
+              <li><strong>Semantic chunking:</strong> Dividing text based on meaning, topics, or semantic units.</li>
+              <li><strong>Hierarchical chunking:</strong> Creating multi-level representations from paragraphs to sections to chapters.</li>
+              <li><strong>Sliding window approaches:</strong> Creating overlapping chunks to maintain context across chunk boundaries.</li>
+              <li><strong>Recursive chunking:</strong> Progressive splitting of documents based on content structure.</li>
+              <li><strong>Common interview questions:</strong> "How would you chunk a legal document for optimal retrieval?", "What are the tradeoffs between different chunking strategies?"</li>
+            </ul>`
+          }
+        ]
+      },
+      {
+        row: 2,
+        nodes: [
+          {
+            id: 6,
+            title: "Advanced Search algorithms",
+            level: "intermediate",
+            details: `<p>Understanding modern search algorithms is essential for building effective information retrieval systems.</p>
+            <ul class="detail-list">
+              <li><strong>BM25:</strong> Learn about the probabilistic ranking framework that extends TF-IDF.</li>
+              <li><strong>Vector search:</strong> Understand approximate nearest neighbor algorithms like HNSW, FAISS, and Annoy.</li>
+              <li><strong>Hybrid search:</strong> Combining traditional lexical search with semantic vector search.</li>
+              <li><strong>Re-ranking mechanisms:</strong> Using additional models to improve initial search results.</li>
+              <li><strong>Query expansion and reformulation:</strong> Techniques to enhance search queries for better results.</li>
+              <li><strong>Common interview questions:</strong> "Compare and contrast vector search and keyword search", "How would you design a search system that balances accuracy and latency?"</li>
+            </ul>`
+          },
+          {
+            id: 5,
+            title: "Internal working of vector DB",
+            level: "intermediate",
+            details: `<p>Vector databases are crucial for storing and retrieving embeddings in LLM applications.</p>
+            <ul class="detail-list">
+              <li><strong>Vector indexing structures:</strong> Understand how HNSW, IVF, and other indexing methods work.</li>
+              <li><strong>Distance metrics:</strong> Learn about cosine similarity, Euclidean distance, and dot product for vector comparisons.</li>
+              <li><strong>Quantization techniques:</strong> Methods for compressing vectors to save memory while preserving similarity.</li>
+              <li><strong>Sharding and distribution:</strong> Approaches for scaling vector databases across multiple machines.</li>
+              <li><strong>Filtering and hybrid retrieval:</strong> Combining metadata filtering with vector similarity search.</li>
+              <li><strong>Common interview questions:</strong> "How would you choose between different vector index types?", "Explain the tradeoffs in vector quantization."</li>
+            </ul>`
+          },
+          {
+            id: 4,
+            title: "Embedding model",
+            level: "intermediate",
+            details: `<p>Embedding models convert text to numerical vectors that capture semantic meaning.</p>
+            <ul class="detail-list">
+              <li><strong>Embedding architectures:</strong> Understanding models like BERT, Sentence Transformers, and E5.</li>
+              <li><strong>Training objectives:</strong> Contrastive learning, masked language modeling, and other approaches.</li>
+              <li><strong>Domain adaptation:</strong> Methods for fine-tuning embeddings for specific domains or tasks.</li>
+              <li><strong>Dimensionality considerations:</strong> Tradeoffs between vector size, performance, and computational cost.</li>
+              <li><strong>Cross-modal embeddings:</strong> Working with text, images, and other data types in the same embedding space.</li>
+              <li><strong>Common interview questions:</strong> "How would you evaluate the quality of an embedding model?", "When would you choose to create custom embeddings versus using pre-trained ones?"</li>
+            </ul>`
+          }
+        ]
+      },
+      {
+        row: 3,
+        nodes: [
+          {
+            id: 7,
+            title: "Language models internal working",
+            level: "advanced",
+            details: `<p>Understanding the inner workings of LLMs is crucial for optimizing their performance and addressing limitations.</p>
+            <ul class="detail-list">
+              <li><strong>Transformer architecture:</strong> Deep dive into multi-head attention, feed-forward networks, and residual connections.</li>
+              <li><strong>Training processes:</strong> Understand pre-training, instruction tuning, and RLHF (Reinforcement Learning from Human Feedback).</li>
+              <li><strong>Tokenization:</strong> How text is converted to tokens and the implications of different tokenization strategies.</li>
+              <li><strong>Attention mechanisms:</strong> Self-attention, cross-attention, and their roles in processing context.</li>
+              <li><strong>Parameter efficiency:</strong> Techniques like LoRA, QLoRA, and other methods for fine-tuning large models efficiently.</li>
+              <li><strong>Common interview questions:</strong> "Explain how attention works in transformers", "What happens during the forward pass of an LLM?"</li>
+            </ul>`
+          },
+          {
+            id: 8,
+            title: "Supervised fine-tuning of LLM",
+            level: "advanced",
+            details: `<p>Fine-tuning adapts pre-trained models to specific tasks or domains.</p>
+            <ul class="detail-list">
+              <li><strong>Dataset preparation:</strong> Creating high-quality instruction-response pairs for training.</li>
+              <li><strong>Parameter-efficient fine-tuning:</strong> Techniques like LoRA, QLoRA, and adapter layers.</li>
+              <li><strong>Training dynamics:</strong> Learning rates, batch sizes, and optimization strategies for fine-tuning.</li>
+              <li><strong>Catastrophic forgetting:</strong> Strategies to maintain general capabilities while specializing.</li>
+              <li><strong>Evaluation methodologies:</strong> Benchmarking fine-tuned models against baselines.</li>
+              <li><strong>Common interview questions:</strong> "How would you fine-tune an LLM for a specialized medical application?", "What are the risks of fine-tuning and how would you mitigate them?"</li>
+            </ul>`
+          },
+          {
+            id: 9,
+            title: "Preference alignment",
+            level: "advanced",
+            details: `<p>Alignment ensures AI systems behave according to human preferences and values.</p>
+            <ul class="detail-list">
+              <li><strong>RLHF:</strong> Reinforcement Learning from Human Feedback methodology and implementation.</li>
+              <li><strong>Constitutional AI:</strong> Using principles to guide model responses and behavior.</li>
+              <li><strong>DPO and ORPO:</strong> Direct Preference Optimization and other alignment techniques.</li>
+              <li><strong>Reward modeling:</strong> Creating models that can predict human preferences.</li>
+              <li><strong>Safety and ethical considerations:</strong> Balancing capabilities with responsible outputs.</li>
+              <li><strong>Common interview questions:</strong> "Explain the RLHF pipeline", "How would you measure the success of an alignment process?"</li>
+            </ul>`
+          }
+        ]
+      },
+      {
+        row: 4,
+        nodes: [
+          {
+            id: 12,
+            title: "Evaluation of LLM system",
+            level: "advanced",
+            details: `<p>Thorough evaluation ensures LLM systems meet quality, safety, and performance requirements.</p>
+            <ul class="detail-list">
+              <li><strong>Automated metrics:</strong> BLEU, ROUGE, BERTScore, and other quantitative measures.</li>
+              <li><strong>Human evaluation:</strong> Designing effective evaluation protocols for human assessors.</li>
+              <li><strong>Benchmarks:</strong> Standard datasets like MMLU, HumanEval, and specialized domain benchmarks.</li>
+              <li><strong>Red teaming:</strong> Adversarial testing to identify weaknesses and vulnerabilities.</li>
+              <li><strong>Evaluation across dimensions:</strong> Assessing factuality, helpfulness, harmlessness, etc.</li>
+              <li><strong>Common interview questions:</strong> "How would you design an evaluation framework for a customer-facing LLM product?", "What metrics would you prioritize for different use cases?"</li>
+            </ul>`
+          },
+          {
+            id: 11,
+            title: "Hallucination control techniques",
+            level: "expert",
+            details: `<p>Preventing false or misleading outputs is critical for building trustworthy AI systems.</p>
+            <ul class="detail-list">
+              <li><strong>Source attribution:</strong> Methods for grounding responses in verifiable information.</li>
+              <li><strong>Self-consistency:</strong> Generating multiple responses and identifying consensus.</li>
+              <li><strong>Uncertainty estimation:</strong> Having models express confidence levels in their outputs.</li>
+              <li><strong>Knowledge-grounded generation:</strong> Ensuring responses are tied to retrieved information.</li>
+              <li><strong>Chain-of-verification:</strong> Fact-checking techniques where models verify their own outputs.</li>
+              <li><strong>Common interview questions:</strong> "How would you minimize hallucinations in a medical AI assistant?", "Design a system that can detect when an LLM is likely to hallucinate."</li>
+            </ul>`
+          },
+          {
+            id: 10,
+            title: "Deployment & inference optimization",
+            level: "expert",
+            details: `<p>Optimizing LLM deployment for performance, cost, and user experience.</p>
+            <ul class="detail-list">
+              <li><strong>Quantization:</strong> Converting models to lower precision formats (int8, int4) while preserving quality.</li>
+              <li><strong>Distillation:</strong> Creating smaller, faster models that mimic larger ones.</li>
+              <li><strong>Caching strategies:</strong> KV caching and other techniques to speed up inference.</li>
+              <li><strong>Distributed inference:</strong> Spreading computation across multiple devices or servers.</li>
+              <li><strong>Speculative decoding:</strong> Using smaller models to predict tokens that are verified by larger models.</li>
+              <li><strong>Common interview questions:</strong> "How would you optimize an LLM system that needs to serve 1000 requests per second?", "Explain the tradeoffs in model quantization."</li>
+            </ul>`
+          }
+        ]
+      },
+      {
+        row: 5,
+        nodes: [
+          {
+            id: 13,
+            title: "Agent-based system",
+            level: "expert",
+            details: `<p>LLM-powered agents can perform complex tasks by planning and executing actions.</p>
+            <ul class="detail-list">
+              <li><strong>Tool use:</strong> Enabling LLMs to interact with external tools, APIs, and systems.</li>
+              <li><strong>ReAct framework:</strong> Reason-Act cycles for planning and execution.</li>
+              <li><strong>Autonomous agent design:</strong> Creating systems that can operate with minimal human supervision.</li>
+              <li><strong>Multi-agent collaboration:</strong> Designing systems where multiple specialized agents work together.</li>
+              <li><strong>Memory systems:</strong> Short-term and long-term memory mechanisms for persistent context.</li>
+              <li><strong>Common interview questions:</strong> "Design an agent system for automating a complex business workflow", "How would you ensure safety in autonomous LLM agents?"</li>
+            </ul>`
+          },
+          {
+            id: 14,
+            title: "Prompt hacking",
+            level: "expert",
+            details: `<p>Understanding potential vulnerabilities in LLM systems is essential for building secure applications.</p>
+            <ul class="detail-list">
+              <li><strong>Prompt injection:</strong> Methods attackers use to override system instructions or extract sensitive information.</li>
+              <li><strong>Jailbreaking techniques:</strong> Approaches used to circumvent safety measures and content policies.</li>
+              <li><strong>Defense strategies:</strong> Input sanitization, output filtering, and architectural safeguards.</li>
+              <li><strong>Red teaming:</strong> Systematic approaches to identifying and patching security weaknesses.</li>
+              <li><strong>Ethical considerations:</strong> Balancing security research with responsible disclosure.</li>
+              <li><strong>Common interview questions:</strong> "How would you protect an LLM system from prompt injection attacks?", "Design a defense-in-depth strategy for an LLM-based application."</li>
+            </ul>`
+          },
+          {
+            id: 15,
+            title: "Case studies & Scenario based questions",
+            level: "beginner",
+            details: `<p>Practical applications of LLM knowledge to real-world scenarios are common in interviews.</p>
+            <ul class="detail-list">
+              <li><strong>System design:</strong> Creating end-to-end solutions for specific use cases like customer support or content generation.</li>
+              <li><strong>Problem solving:</strong> Working through technical challenges related to LLM applications.</li>
+              <li><strong>Trade-off analysis:</strong> Balancing factors like cost, latency, accuracy, and safety.</li>
+              <li><strong>Failure analysis:</strong> Identifying potential failure modes and mitigation strategies.</li>
+              <li><strong>Ethics and responsibility:</strong> Addressing the societal implications of LLM deployment.</li>
+              <li><strong>Common scenarios:</strong> "Design a content moderation system using LLMs", "How would you build a document Q&A system for legal contracts?"</li>
+            </ul>`
+          }
+        ]
+      }
+    ];
+    
+    // Create connectors data based on the roadmap layout
+    const connectorData = [
+      // Horizontal connectors for row 1
+      { type: 'horizontal', start: { row: 1, id: 1 }, end: { row: 1, id: 2 } },
+      { type: 'horizontal', start: { row: 1, id: 2 }, end: { row: 1, id: 3 } },
+      
+      // Vertical connector from node 3 to row 2
+      { type: 'vertical', start: { row: 1, id: 3 }, end: { row: 2, id: 4 } },
+      
+      // Horizontal connectors for row 2
+      { type: 'horizontal', start: { row: 2, id: 6 }, end: { row: 2, id: 5 } },
+      { type: 'horizontal', start: { row: 2, id: 5 }, end: { row: 2, id: 4 } },
+      
+      // Vertical connector from node 6 to row 3
+      { type: 'vertical', start: { row: 2, id: 6 }, end: { row: 3, id: 7 } },
+      
+      // Horizontal connectors for row 3
+      { type: 'horizontal', start: { row: 3, id: 7 }, end: { row: 3, id: 8 } },
+      { type: 'horizontal', start: { row: 3, id: 8 }, end: { row: 3, id: 9 } },
+      
+      // Vertical connector from node 9 to row 4
+      { type: 'vertical', start: { row: 3, id: 9 }, end: { row: 4, id: 10 } },
+      
+      // Horizontal connectors for row 4
+      { type: 'horizontal', start: { row: 4, id: 12 }, end: { row: 4, id: 11 } },
+      { type: 'horizontal', start: { row: 4, id: 11 }, end: { row: 4, id: 10 } },
+      
+      // Vertical connector from node 12 to row 5
+      { type: 'vertical', start: { row: 4, id: 12 }, end: { row: 5, id: 13 } },
+      
+      // Horizontal connectors for row 5
+      { type: 'horizontal', start: { row: 5, id: 13 }, end: { row: 5, id: 14 } },
+      { type: 'horizontal', start: { row: 5, id: 14 }, end: { row: 5, id: 15 } }
+    ];
+    
+    // Render the roadmap
+    function renderRoadmap() {
+      const roadmapElement = document.getElementById('roadmap');
+      roadmapElement.innerHTML = '';
+      
+      // Create rows
+      roadmapData.forEach(rowData => {
+        const rowElement = document.createElement('div');
+        rowElement.className = 'row';
+        rowElement.dataset.row = rowData.row;
+        
+        // Create nodes
+        rowData.nodes.forEach(nodeData => {
+          const nodeElement = document.createElement('div');
+          nodeElement.className = `node ${nodeData.level}`;
+          nodeElement.dataset.id = nodeData.id;
+          nodeElement.dataset.row = rowData.row;
+          
+          nodeElement.innerHTML = `
+            <div class="node-number">${nodeData.id}</div>
+            <div class="node-content">${nodeData.title}</div>
+          `;
+          
+          nodeElement.addEventListener('click', () => showDetails(nodeData));
+          
+          rowElement.appendChild(nodeElement);
+        });
+        
+        roadmapElement.appendChild(rowElement);
+      });
+      
+      // Add connectors after nodes are rendered
+      setTimeout(addConnectors, 100);
+    }
+    
+    // Add connectors between nodes
+    function addConnectors() {
+      const roadmapElement = document.getElementById('roadmap');
+      
+      connectorData.forEach((connector, index) => {
+        const connectorElement = document.createElement('div');
+        connectorElement.className = `connector ${connector.type}-connector`;
+        connectorElement.id = `connector-${index}`;
+        
+        const startNode = document.querySelector(`.node[data-row="${connector.start.row}"][data-id="${connector.start.id}"]`);
+        const endNode = document.querySelector(`.node[data-row="${connector.end.row}"][data-id="${connector.end.id}"]`);
+        
+        if (!startNode || !endNode) return;
+        
+        const startRect = startNode.getBoundingClientRect();
+        const endRect = endNode.getBoundingClientRect();
+        const roadmapRect = roadmapElement.getBoundingClientRect();
+        
+        if (connector.type === 'horizontal') {
+          const startX = startRect.right - roadmapRect.left;
+          const endX = endRect.left - roadmapRect.left;
+          const y = startRect.top + startRect.height / 2 - roadmapRect.top;
+          
+          connectorElement.style.left = `${startX}px`;
+          connectorElement.style.top = `${y}px`;
+          connectorElement.style.width = `${endX - startX}px`;
+        } else {
+          // Vertical connector
+          const x = startRect.left + startRect.width / 2 - roadmapRect.left;
+          const startY = startRect.bottom - roadmapRect.top;
+          const endY = endRect.top - roadmapRect.top;
+          
+          connectorElement.style.left = `${x}px`;
+          connectorElement.style.top = `${startY}px`;
+          connectorElement.style.height = `${endY - startY}px`;
+        }
+        
+        roadmapElement.appendChild(connectorElement);
+      });
+      
+      // Start animations after rendering
+      animateConnectors();
+    }
+    
+    // Animate connectors with a cascade effect
+    function animateConnectors() {
+      document.querySelectorAll('.connector').forEach((connector, index) => {
+        setTimeout(() => {
+          if (connector.classList.contains('horizontal-connector')) {
+            connector.style.width = connector.style.width;
+          } else {
+            connector.style.height = connector.style.height;
+          }
+        }, index * 200);
+      });
+      
+      // Add pulse animation to first node after connectors are done
+      setTimeout(() => {
+        const firstNode = document.querySelector('.node[data-id="1"]');
+        if (firstNode) {
+          firstNode.classList.add('pulse');
+          // Trigger click on first node to show details
+          firstNode.click();
+        }
+      }, document.querySelectorAll('.connector').length * 200 + 500);
+    }
+    
+    // Show details for selected node
+    function showDetails(nodeData) {
+      // Remove pulse from all nodes
+      document.querySelectorAll('.node').forEach(node => {
+        node.classList.remove('pulse');
+      });
+      
+      // Add pulse to selected node
+      const selectedNode = document.querySelector(`.node[data-id="${nodeData.id}"]`);
+      if (selectedNode) {
+        selectedNode.classList.add('pulse');
+      }
+      
+      // Update detail panel
+      const detailPanel = document.getElementById('detailPanel');
+      const detailTitle = document.getElementById('detailTitle');
+      const detailContent = document.getElementById('detailContent');
+      
+      detailTitle.textContent = `${nodeData.id}. ${nodeData.title}`;
+      detailContent.innerHTML = nodeData.details;
+      
+      // Show detail panel with animation
+      detailPanel.classList.remove('active');
+      setTimeout(() => {
+        detailPanel.classList.add('active');
+      }, 10);
+    }
+    
+    // Initialize the roadmap
+    window.addEventListener('load', () => {
+      renderRoadmap();
+      
+      // Handle window resize
+      window.addEventListener('resize', () => {
+        document.querySelectorAll('.connector').forEach(connector => {
+          connector.remove();
+        });
+        addConnectors();
+      });
+    });
+  </script>
+</body>
+</html>
