@@ -2,7 +2,8 @@ reranker related blogs and articles.
 
 Series by https://www.linkedin.com/in/dipanjans/ on rerankers and RAG related concepts 
 
-Here’s a bullet-point summary for each day in serial order:
+
+![image](https://github.com/user-attachments/assets/91963715-4a75-4311-8484-0fdc9463d447)
 
 ---
 
