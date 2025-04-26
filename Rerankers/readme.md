@@ -116,4 +116,127 @@ Sure! Here's the **Day 5 summary** in the exact format you're using:
 📐 Math-backed metric definitions  
 🧪 Worked examples + hands-on code  
 
+
+
+## 📋 Bullet Points Summary (Markdown)
+
+### **Day 6: End-to-End RAG Systems Evaluation**
+- Focus: Full RAG system evaluation covering both retrieval and generation stages.
+- Covered topics:
+  - Creating a "Golden Reference Dataset" with ground truth context and answers.
+  - Configuring RAG to output actual context and generated answers.
+  - Applying retrieval metrics: Contextual Precision, Recall, Relevancy.
+  - Applying generation metrics: Answer Relevancy, Faithfulness, Hallucination Check.
+  - Automating evaluation using tools like DeepEval, Ragas.
+  - Iterative evaluation to identify and fix system weaknesses.
+
+### **Day 7: RAG vs. Agentic RAG Systems**
+- Focus: Differences and advancements from standard RAG to Agentic RAG.
+- Covered topics:
+  - Standard RAG: static knowledge retrieval using vectors.
+  - AI Agents: tool usage and task execution.
+  - Agentic RAG: combining agents and RAG for dynamic, intelligent retrieval.
+  - Enhancements: real-time data access, decision making, multi-step workflows, better handling of complex tasks.
+
+### **Day 8: Popular RAG Retrieval Strategies**
+- Focus: Different techniques for improving retrieval quality in RAG.
+- Covered topics:
+  - Semantic Similarity Search.
+  - Similarity with Threshold Filtering.
+  - Multi-Query Retrieval (via LLM).
+  - Self-Query Retrieval (structured metadata + text search).
+  - Reranker Retrieval (cross-encoder rerankers).
+  - Ensemble Retrieval (combining multiple methods).
+  - Hybrid Search (semantic + keyword).
+  - Contextual Compression to reduce noise.
+
+### **Day 9: 7 Popular Agentic RAG System Architectures**
+- Focus: Architecture patterns combining Agents with RAG.
+- Covered topics:
+  - Agentic RAG Routers.
+  - Query Planning Agentic RAG.
+  - Adaptive RAG.
+  - Corrective RAG (CRAG).
+  - Self-Reflective RAG.
+  - Speculative RAG (Drafter + Verifier LLMs).
+  - Self-Route Agentic RAG for dynamic long-context handling.
+
+### **Day 10: Multimodal RAG Systems**
+- Focus: Expanding RAG beyond text to multimodal inputs.
+- Covered topics:
+  - Parsing and handling images, tables, and charts.
+  - Multi-Vector Retriever strategy (summarization + raw storage).
+  - Using multimodal LLMs like GPT-4o for final generation.
+  - Coordinated retrieval of summaries + raw elements using IDs.
+
+### **Day 11: Agentic Adaptive RAG Systems**
+- Focus: Making RAG workflows dynamic based on query complexity.
+- Covered topics:
+  - Query classification to choose simple/complex workflow paths.
+  - Conditional routing: direct answer, retrieval, web search.
+  - Reflection and corrective retrieval based on initial result quality.
+  - Workflow patterns combining web and vector retrieval adaptively.
+
+### **Day 12: Contextual RAG Systems**
+- Focus: Making every document chunk smarter and more self-contained.
+- Covered topics:
+  - LLM-generated context summaries prepended to each chunk.
+  - Indexing with "Context + Chunk" for better retrieval precision.
+  - Hybrid search (vector + keyword) combined with reranking.
+  - Goal: improve retriever's understanding of document-level meaning.
+
+### **Day 13: Mastering RAG (RAG Developer Stack)**
+- Focus: Complete understanding of a production-grade RAG stack.
+- Covered topics:
+  - Core components: Retrieval, LLMs, Embeddings, Indexing, Re-ranking, Evaluation.
+  - Popular tools: FAISS, Chroma, Weaviate, Pinecone, Milvus.
+  - Frameworks: LangChain, LlamaIndex, Haystack.
+  - Key skills: Chunking strategies, Query Expansion, Semantic Caching.
+  - Evaluation methods and Deployment best practices.
+
+---
+
+## 📊 Table Summary (Markdown)
+
+| Day | Topic | Key Points |
+|:---:|:-----|:-----------|
+| 6 | End-to-End RAG Evaluation | Golden datasets, Full retriever + generator evaluation, metrics automation |
+| 7 | RAG vs. Agentic RAG | Real-time data access, tool use, multi-step planning, agents |
+| 8 | Popular Retrieval Strategies | Semantic search, Thresholding, Multi-query, Reranking, Hybrid search |
+| 9 | 7 Agentic RAG Architectures | Routers, Planning, Adaptive workflows, Corrective and Reflective RAG |
+| 10 | Multimodal RAG Systems | Handle images, tables, charts; Multi-vector retrieval; GPT-4o generation |
+| 11 | Agentic Adaptive RAG | Classify query complexity, dynamic routing, reflection, corrective search |
+| 12 | Contextual RAG Systems | LLM-generated context for chunks, hybrid retrieval, improved precision |
+| 13 | Mastering RAG (Stack) | Components breakdown, Tools, Chunking, Query Processing, Evaluation, Deployment |
+
+---
+
+## 🛠 Visual Style Structure (Markdown)
+
+```markdown
+Day 6 ➔ Full RAG System Evaluation
+  └── Golden datasets → Retriever + Generator evaluation → Metrics (DeepEval, Ragas)
+
+Day 7 ➔ RAG vs. Agentic RAG
+  └── Static RAG ➔ Real-time Agents ➔ Multi-step dynamic workflows
+
+Day 8 ➔ Popular Retrieval Strategies
+  └── Semantic | Multi-query | Self-query | Hybrid | Rerankers | Context Compression
+
+Day 9 ➔ 7 Architectures of Agentic RAG
+  └── Routers → Planning → Corrective RAG → Self-Reflective → Speculative → Self-Route
+
+Day 10 ➔ Multimodal RAG
+  └── Text + Images + Tables ➔ Summarization ➔ Retrieval by IDs ➔ Multimodal LLMs
+
+Day 11 ➔ Agentic Adaptive RAG
+  └── Query classification → Workflow routing → Reflection → Corrective search
+
+Day 12 ➔ Contextual RAG
+  └── LLM-context summaries ➔ Better chunk embeddings ➔ Hybrid retrieval
+
+Day 13 ➔ Mastering RAG Stack
+  └── Retrieval + Indexing + Chunking + Reranking + Evaluation + Deployment
+```
+
 ---
