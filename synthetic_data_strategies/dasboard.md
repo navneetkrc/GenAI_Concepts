@@ -1,3 +1,33 @@
+# 🔍 On Synthetic Data Strategies for Domain-Specific Generative Retrieval
+
+_A Github-Optimized Dashboard for Paper Summary, Results, and Learnings._
+
+---
+
+# 📑 Table of Contents
+- [📊 1. Overview Dashboard (Executive Summary)](#-1-overview-dashboard-executive-summary)
+- [📈 2. Detailed Metrics Dashboard (Performance Insights)](#-2-detailed-metrics-dashboard-performance-insights)
+  - [🧪 Synthetic Query Granularity Impact](#-synthetic-query-granularity-impact)
+  - [🧪 Constraints-Based Queries Impact](#-constraints-based-queries-impact)
+  - [🧪 Context2ID Importance (Memorization)](#-context2id-importance-memorization)
+  - [🧪 Preference Learning: Hard Negatives vs Random](#-preference-learning-hard-negatives-vs-random)
+  - [📊 Off-the-Shelf Comparisons](#-off-the-shelf-comparisons)
+- [🛠️ 3. Behind the Scenes Dashboard (Data Generation + Training)](#️-3-behind-the-scenes-dashboard-data-generation--training)
+  - [📚 Two-Stage Training Pipeline (ASCII Diagram)](#-two-stage-training-pipeline-ascii-diagram)
+  - [✍️ Synthetic Query Types](#️-synthetic-query-types)
+  - [🧠 Context2ID vs Query2ID](#-context2id-vs-query2id)
+  - [🔥 Hard Negative Mining in Preference Learning](#-hard-negative-mining-in-preference-learning)
+  - [🧠 LLMs Used for Synthetic Data](#-llms-used-for-synthetic-data)
+- [📋 4. Final Takeaways Dashboard](#-4-final-takeaways-dashboard)
+  - [✅ Top 5 Key Learnings](#-top-5-key-learnings)
+  - [🚀 Future Work Ideas](#-future-work-ideas)
+
+---
+
+# 📊 1. Overview Dashboard (Executive Summary)
+
+...
+
 
 ---
 
