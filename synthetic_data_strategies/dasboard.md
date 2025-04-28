@@ -1,6 +1,6 @@
 # 🔍 On Synthetic Data Strategies for Domain-Specific Generative Retrieval
 
-_A Github-Optimized Dashboard for Paper Summary, Results, and Learnings._
+_A Github-Optimized Dashboard for Paper Summary, Results, and Learnings.
 
 ---
 
