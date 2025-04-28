@@ -1,0 +1,79 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Synthetic Data Generative Retrieval" id="Xy3beBQSPVJfZQ2oRvxW">
+    <mxGraphModel dx="1106" dy="688" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <mxCell id="2" value="Corpus" style="rounded=1;fillColor=#DCE6F1;strokeColor=#6D9EEB;" vertex="1" parent="1">
+          <mxGeometry x="400" y="40" width="140" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="3" value="Chunk Extraction" style="rounded=1;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
+          <mxGeometry x="200" y="140" width="160" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="4" value="Metadata Extraction" style="rounded=1;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
+          <mxGeometry x="500" y="140" width="160" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="5" value="Synthetic Query Generation\n(Mixtral 8x7B)" style="rounded=1;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="1">
+          <mxGeometry x="350" y="240" width="200" height="70" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="6" value="Two-Stage Training" style="rounded=1;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="1">
+          <mxGeometry x="400" y="370" width="140" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="7" value="Stage 1: Supervised Fine-Tuning\n(Context2ID + Query2ID)" style="rounded=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="1">
+          <mxGeometry x="200" y="470" width="200" height="70" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="8" value="Stage 2: Preference Learning\n(Hard Negative Mining + RPO)" style="rounded=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="1">
+          <mxGeometry x="500" y="470" width="200" height="70" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="9" value="Generative Retrieval Model" style="rounded=1;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="1">
+          <mxGeometry x="400" y="600" width="160" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="10" edge="1" parent="1" source="2" target="3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="11" edge="1" parent="1" source="2" target="4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="12" edge="1" parent="1" source="3" target="5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="13" edge="1" parent="1" source="4" target="5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="14" edge="1" parent="1" source="5" target="6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="15" edge="1" parent="1" source="6" target="7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="16" edge="1" parent="1" source="6" target="8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="17" edge="1" parent="1" source="7" target="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="18" edge="1" parent="1" source="8" target="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
