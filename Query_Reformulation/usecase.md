@@ -250,4 +250,3 @@ Citations:
 [156] https://www.gsmarena.com/samsung_us_cuts_galaxy_z_and_s23_prices_for_black_friday_offers_better_tradein_deals-news-60667.php
 
 ---
-Answer from Perplexity: pplx.ai/share
