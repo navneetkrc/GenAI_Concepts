@@ -11,8 +11,8 @@
 8.  [Importance of a 'Hugging Face for All Data Modalities'](#the-idea-of-a-hugging-face-for-all-data-modalities-was-mentioned-what-does-this-concept-entail-and-why-is-it-considered-important-for-the-future)
 
 ---
+![image](https://github.com/user-attachments/assets/be7cc0f0-9490-4248-91e3-b782665374d7)
 
-![image](https://github.com/user-attachments/assets/e1b2ae68-e879-425f-a68a-4135e9f92c10)
 
 ---
 ## What's the future outlook for reranking and embeddings in search and recommendation systems, and how might they evolve?
