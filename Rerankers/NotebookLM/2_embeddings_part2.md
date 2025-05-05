@@ -304,6 +304,7 @@
 
 ![image](https://github.com/user-attachments/assets/c6d701da-4d50-4b83-88cb-769fde36e114)
 
+
 ---
 ## 9. Why is Chunking necessary when processing documents like Samsung support articles, and what are best practices?
 
@@ -327,6 +328,9 @@
 *   **Best Practices:**
     *   The sources strongly advise **against arbitrary chunking** (e.g., splitting strictly by token count without regard for content) as it can lead to incomplete sentences or semantically incoherent chunks, which negatively impacts performance.
     *   It is recommended to chunk documents based on their **natural structure**, such as by **paragraphs or sections**, especially for well-structured documents like reports or papers. This is considered a "more sensible way."
+
+
+![image](https://github.com/user-attachments/assets/1d76b7a6-94e1-47f4-b7e2-425c521dcf17)
 
 ---
 
@@ -405,6 +409,9 @@
 *   **Mapping Natural Language to API Calls:** Determining the most relevant API endpoint for a user's natural language request by comparing the request to API descriptions.
 *   **Recommendation Systems:** Using the relevance score from a reranker (comparing user context to item descriptions) as a feature within a larger recommendation model.
 *   **Enhancing Legacy Search:** Adding a semantic relevance layer on top of existing keyword-based search systems (like OpenSearch/Elasticsearch).
+
+
+![image](https://github.com/user-attachments/assets/4321f58d-39fc-4880-911d-b31908ad49f4)
 
 ---
 
