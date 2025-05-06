@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 550" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="550" fill="#f8f9fa" rx="10" ry="10"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">Bi-encoders vs. Cross-encoders</text>
+  
+  <!-- Divider Line -->
+  <line x1="400" y1="70" x2="400" y2="420" stroke="#ddd" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- Headers -->
+  <text x="200" y="80" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#2e7d32">Bi-encoders</text>
+  <text x="600" y="80" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#c62828">Cross-encoders</text>
+  
+  <!-- Architecture Diagrams -->
+  <!-- Bi-encoder Architecture -->
+  <rect x="100" y="100" width="100" height="60" rx="8" ry="8" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="150" y="135" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b5e20">Query</text>
+  
+  <rect x="250" y="100" width="100" height="60" rx="8" ry="8" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="300" y="135" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b5e20">Document</text>
+  
+  <rect x="100" y="180" width="100" height="60" rx="8" ry="8" fill="#4caf50" stroke="#2e7d32" stroke-width="2"/>
+  <text x="150" y="215" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Encoder</text>
+  
+  <rect x="250" y="180" width="100" height="60" rx="8" ry="8" fill="#4caf50" stroke="#2e7d32" stroke-width="2"/>
+  <text x="300" y="215" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Encoder</text>
+  
+  <rect x="100" y="260" width="100" height="40" rx="5" ry="5" fill="#81c784" stroke="#2e7d32" stroke-width="2"/>
+  <text x="150" y="285" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#1b5e20">Query Vector</text>
+  
+  <rect x="250" y="260" width="100" height="40" rx="5" ry="5" fill="#81c784" stroke="#2e7d32" stroke-width="2"/>
+  <text x="300" y="285" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#1b5e20">Doc Vector</text>
+  
+  <rect x="175" y="320" width="100" height="40" rx="5" ry="5" fill="#a5d6a7" stroke="#2e7d32" stroke-width="2"/>
+  <text x="225" y="345" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#1b5e20">Similarity Score</text>
+  
+  <!-- Arrows for Bi-encoders -->
+  <path d="M 150 160 L 150 180" stroke="#2e7d32" stroke-width="2" fill="none"/>
+  <polygon points="145,175 150,180 155,175" fill="#2e7d32"/>
+  
+  <path d="M 300 160 L 300 180" stroke="#2e7d32" stroke-width="2" fill="none"/>
+  <polygon points="295,175 300,180 305,175" fill="#2e7d32"/>
+  
+  <path d="M 150 240 L 150 260" stroke="#2e7d32" stroke-width="2" fill="none"/>
+  <polygon points="145,255 150,260 155,255" fill="#2e7d32"/>
+  
+  <path d="M 300 240 L 300 260" stroke="#2e7d32" stroke-width="2" fill="none"/>
+  <polygon points="295,255 300,260 305,255" fill="#2e7d32"/>
+  
+  <path d="M 150 300 L 150 320 L 175 320" stroke="#2e7d32" stroke-width="2" fill="none"/>
+  <polygon points="170,315 175,320 170,325" fill="#2e7d32"/>
+  
+  <path d="M 300 300 L 300 320 L 275 320" stroke="#2e7d32" stroke-width="2" fill="none"/>
+  <polygon points="280,315 275,320 280,325" fill="#2e7d32"/>
+  
+  <!-- Cross-encoder Architecture -->
+  <rect x="500" y="100" width="200" height="60" rx="8" ry="8" fill="#ffcdd2" stroke="#c62828" stroke-width="2"/>
+  <text x="550" y="135" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#b71c1c">Query</text>
+  <text x="650" y="135" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#b71c1c">Document</text>
+  <line x1="600" y1="100" x2="600" y2="160" stroke="#c62828" stroke-width="2" stroke-dasharray="3,3"/>
+  
+  <rect x="500" y="180" width="200" height="80" rx="8" ry="8" fill="#f44336" stroke="#c62828" stroke-width="2"/>
+  <text x="600" y="220" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Joint Encoder</text>
+  
+  <rect x="550" y="280" width="100" height="40" rx="5" ry="5" fill="#ef9a9a" stroke="#c62828" stroke-width="2"/>
+  <text x="600" y="305" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#b71c1c">Relevance Score</text>
+  
+  <!-- Arrows for Cross-encoders -->
+  <path d="M 600 160 L 600 180" stroke="#c62828" stroke-width="2" fill="none"/>
+  <polygon points="595,175 600,180 605,175" fill="#c62828"/>
+  
+  <path d="M 600 260 L 600 280" stroke="#c62828" stroke-width="2" fill="none"/>
+  <polygon points="595,275 600,280 605,275" fill="#c62828"/>
+  
+  <!-- Key Features Boxes -->
+  <!-- Bi-encoder Features -->
+  <rect x="50" y="380" width="300" height="120" rx="10" ry="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="200" y="400" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2e7d32">Key Features</text>
+  
+  <text x="70" y="425" font-family="Arial, sans-serif" font-size="12" fill="#333">• Separate processing of query and documents</text>
+  <text x="70" y="445" font-family="Arial, sans-serif" font-size="12" fill="#333">• Documents can be pre-encoded (offline)</text>
+  <text x="70" y="465" font-family="Arial, sans-serif" font-size="12" fill="#333">• Very fast retrieval using vector similarity</text>
+  <text x="70" y="485" font-family="Arial, sans-serif" font-size="12" fill="#333">• Suitable for first-stage retrieval</text>
+  
+  <!-- Cross-encoder Features -->
+  <rect x="450" y="380" width="300" height="120" rx="10" ry="10" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+  <text x="600" y="400" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#c62828">Key Features</text>
+  
+  <text x="470" y="425" font-family="Arial, sans-serif" font-size="12" fill="#333">• Joint processing of query and documents</text>
+  <text x="470" y="445" font-family="Arial, sans-serif" font-size="12" fill="#333">• Higher accuracy for relevance assessment</text>
+  <text x="470" y="465" font-family="Arial, sans-serif" font-size="12" fill="#333">• Computationally expensive (no pre-encoding)</text>
+  <text x="470" y="485" font-family="Arial, sans-serif" font-size="12" fill="#333">• Better for reranking smaller result sets</text>
+  
+  <!-- E-commerce Example -->
+  <rect x="50" y="510" width="700" height="30" rx="5" ry="5" fill="#fffde7" stroke="#ffd600" stroke-width="2"/>
+  <text x="400" y="530" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#333">
+    E-commerce Example: Bi-encoder for fast Samsung catalog scan, Cross-encoder for detailed relevance on top results
+  </text>
+</svg>
