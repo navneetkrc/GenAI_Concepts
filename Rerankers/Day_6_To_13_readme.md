@@ -14,7 +14,7 @@
 
 ---
 
-### ⚡ Visual Summary (Icons):
+### ⚡ Visual Summary with icons:
 
 - 🧠 Smarter retrieval = **Agentic RAG**
 - 🔥 Higher precision = **Advanced Retrieval Techniques**
