@@ -44,7 +44,7 @@
 **In summary:**  
 Query understanding is about accurately interpreting user intent, handling linguistic variations, and preparing the query for effective retrieval. Query rewriting transforms this understanding into optimized queries that maximize the chances of retrieving relevant results, using a blend of rule-based, generative, and reinforcement learning techniques-often evaluated by their impact on relevance, diversity, and user engagement[1][2][3][5][6].
 
-Citations:
+**Citations:**
 [1] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/collection_e05483f9-371b-4e79-b8b2-ff30e92b3c87/9a496957-60f8-41e1-91d0-650bdc1f99ff/RL-Based-Query-Rewriting.pdf
 [2] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/collection_e05483f9-371b-4e79-b8b2-ff30e92b3c87/55992e2e-42dc-465e-8fec-4d2a9fde6d45/Enhancing-Search-Using-Large-Language-Models-_-by-Whatnot-Engineering-_-Whatnot-Engineering-_-Medium.pdf
 [3] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/collection_e05483f9-371b-4e79-b8b2-ff30e92b3c87/7ebdce90-2993-4e03-ba46-709c6a76425c/Enhancing-E-commerce-Search_-Reinforcement-Learnin.pdf
