@@ -1,6 +1,6 @@
-# GenAI Concepts - Key Points
+# GenAI Concepts - Key Points 
 
-## Foundation Models
+## Foundation Models 
 
 - **Large Language Models (LLMs)**
   - Pre-trained on vast text datasets
@@ -11,7 +11,7 @@
   - Process multiple types of data (text, images, audio)
   - Examples: GPT-4V, Claude Opus, Gemini, DALL-E 3
 
-## Key Technical Concepts
+## Key Technical Concepts Pointwise
 
 - **Transformer Architecture**
   - Attention mechanism
