@@ -1,4 +1,4 @@
-# GenAI Concepts - Key Points 
+# GenAI Concepts - **Key Points**
 
 ## Foundation Models 
 
