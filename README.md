@@ -8,7 +8,7 @@
   - Foundation for most text-based AI applications
 
 - **Multimodal Models**
-  - Process multiple types of data (text, images, audio)
+  - Process multiple types of data (text, images, video,audio)
   - Examples: GPT-4V, Claude Opus, Gemini, DALL-E 3
 
 ## Key Technical Concepts
