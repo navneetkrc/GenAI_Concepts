@@ -11,7 +11,7 @@
   - Process multiple types of data (text, images, video,audio)
   - Examples: GPT-4V, Claude Opus, Gemini, DALL-E 3
 
-## Key Technical **Concepts**
+## Key Technical Concepts
 
 - **Transformer Architecture**
   - Attention mechanism
