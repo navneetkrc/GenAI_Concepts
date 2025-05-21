@@ -1,6 +1,6 @@
 # GenAI Concepts - **Key Points**
 
-## Foundation Models-
+## Foundation Models
 
 - **Large Language Models (LLMs)**
   - Pre-trained on vast text datasets
