@@ -323,11 +323,71 @@ Retrieves: `"How to treat viral fever"`
 https://medium.com/data-science/what-are-query-key-and-value-in-the-transformer-architecture-and-why-are-they-used-acbe73f731f2
 
   ![image](https://github.com/user-attachments/assets/d8ba1980-3e79-424e-95aa-e4067c31fcae)
-
+---
 * **Transformer Block Diagram:** Encoder, Decoder, Attention layers
+* refer https://medium.com/data-science-community-srm/understanding-encoders-decoders-with-attention-based-mechanism-c1eb7164c581
+  
+![image](https://github.com/user-attachments/assets/44fd90ed-a90e-4a98-91d8-9b6398c89790)
+
+Classic Encoder Decoder -> observe so much of relevance of single connection between Encoder and Decoders
+
+![image](https://github.com/user-attachments/assets/1d95f3bb-8862-4bee-9706-4ef8fef5d706)
+
+See the improvement from regular Encoder-Decoder single point of failure
+
+---
+![image](https://github.com/user-attachments/assets/b0d42713-2853-48de-9312-0527f3029c49)
+Encoder-Decoder with simple fixed context vector
+
+
+![image](https://github.com/user-attachments/assets/734f6ee5-a917-44b5-96d9-771b1664ee1d)
+
+Encoder-decoder with attention-based mechanism(https://zhuanlan.zhihu.com/p/37290775)
+
+
+
+
+---
 * **Local vs Global Attention:** Token connectivity illustration
+* ![image](https://github.com/user-attachments/assets/9cf5e8bc-4ad9-4c86-b872-62efc79c52c8)
+
+Attention matrices of different types of Attention mechanisms. Image sourced from https://medium.com/nlplanet/two-minutes-nlp-visualizing-global-vs-local-attention-c61b42758019
+
+---
 * **Semantic Search Workflow:** Query-to-Embedding to Result flow
+* https://blog.ml6.eu/semantic-search-a-practical-overview-bf2515e7be76
+---
+
+### 🔍 **Lexical Search vs Semantic Search**
+
+* **Lexical Search** relies on exact word matches between the query and documents. If the words don't match, even relevant results are missed.
+
+  * *Example:*
+    Query: “Two bedroom house in Los Angeles”
+    Misses: “A residence with 2 rooms in sunny California” (different wording)
+    Finds: “A two-story house in Los Angeles” (shares words but different meaning)
+
+* **Semantic Search** focuses on the meaning, not just words. It understands synonyms and related concepts, delivering results even with different phrasing.
+
+  * *Example:*
+    Understands “house” ≈ “residence”, “2 rooms” ≈ “two bedroom”, “California” ≈ “Los Angeles” contextually
+    Correctly ranks: “A residence with 2 rooms in sunny California” as relevant
+
+**Bottom line:**
+➡️ Lexical = Exact word match, may miss the point
+➡️ Semantic = Meaning match, captures intent even with different words
 
 ---
 
-Would you like me to generate ready-to-use visuals for any of these? 🎨
+
+* ![image](https://github.com/user-attachments/assets/9e93a0d2-8697-4cfc-b8f2-38384d5f9987)
+
+  ---
+
+* ![image](https://github.com/user-attachments/assets/8e3755b0-d643-4c5d-97d3-4b86e9420b8d)
+
+* ![image](https://github.com/user-attachments/assets/a6ab72a6-d2aa-4d20-9860-294da7b25814)
+
+
+
+---
