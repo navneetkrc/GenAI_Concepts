@@ -4,14 +4,14 @@
 
 ## 🔹 Core Concepts
 
-### ✅ What is Natural Language Processing (NLP)?
+### ✅ What is Natural Language Processing (NLP)??
 
 NLP is a field of AI that enables machines to understand, interpret, generate, and interact using human language.
 It combines **linguistics** and **machine learning** to process text or speech data.
 
 ---
 
-### ✅ What is the difference between NLP and NLU (Natural Language Understanding)?
+### ✅ What is the difference between NLP and NLU (Natural Language Understanding)??
 
 | **Aspect**  | **NLP**                              | **NLU**                              |
 | ----------- | ------------------------------------ | ------------------------------------ |
