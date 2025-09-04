@@ -264,12 +264,7 @@ Here’s a **concise infographic-style markdown** for your slide. It puts **algo
 ---
 
 ---
-
-<img width="1426" height="789" alt="Screenshot 2025-09-03 at 5 20 55 PM" src="https://github.com/user-attachments/assets/21660f87-68e8-47a8-823c-ab2ae6e84161" />
-
-
-Here’s a **slide-ready infographic markdown text** version of your evaluation benchmark summary.
-I’ve grouped items into panels, added icons 🎯📊🤖, and used concise bullets so it’s **easy to visualize**:
+<img width="1432" height="785" alt="Screenshot 2025-09-04 at 5 07 40 PM" src="https://github.com/user-attachments/assets/a922a66d-e8f6-4602-a946-5b56b9e37e25" />
 
 ---
 
@@ -328,11 +323,65 @@ I’ve grouped items into panels, added icons 🎯📊🤖, and used concise bul
 ⚡ **Pro-tip:** In interviews, map each eval to **what it measures** (preferences, chat, static reasoning, tools) and **why it matters** (iteration speed, trust, robustness).
 
 ---
+
+# ⚖️ Trade-offs in LLM Post-Training
+
+👉 *“Easy to boost one benchmark, but hard to improve without hurting others.”*
+
 ---
 
+## 🔹 Real Examples
+
+* 📊 **IFEval ↑** → JSON compliance ✅ but **MMLU ↓** (reasoning weakens).
+* 🗣️ **RLHF ↑ helpfulness** → but **↓ factual precision & conciseness**.
+* ➕ **Math tuning (AIME/GSM8K ↑)** → **↓ fluency in open chat**.
+* 🧬 **Domain LLMs (Bio/Legal ↑)** → **↓ general benchmarks**.
+* ⚖️ **DPO ↑ win rates** → **↓ multi-turn dialogue quality**.
+
+---
+
+## 🔑 Why It Happens
+
+* 🎯 Narrow reward signals → **over-optimization**.
+* 🧠 Limited capacity → **bandwidth trade-offs**.
+* 🔍 Benchmarks ≠ reality → **blind spots emerge**.
+
+---
+
+💡 **Defend it**: Post-training = **balancing act**.
+The real challenge is **raising one score without breaking others**.
+
+---
 
 <img width="1431" height="781" alt="Screenshot 2025-09-03 at 5 25 41 PM" src="https://github.com/user-attachments/assets/46f22ba5-d449-402f-b95b-cd689001450e" />
 
+---
+
+# 🚀 DeepSeek Models: V3 vs R1-Zero vs R1
+
+| 🧩 **Aspect**      | 🎯 **DeepSeek-V3**                    | 🧪 **DeepSeek-R1-Zero**          | 🏆 **DeepSeek-R1**                               |
+| ------------------ | ------------------------------------- | -------------------------------- | ------------------------------------------------ |
+| ⚙️ **Training**    | SFT → (optional) RL                   | Pure RL (no SFT)                 | SFT → Multi-stage RL (GRPO + rejection sampling) |
+| 🧠 **Reasoning**   | ✅ Strong (MATH-500 \~90%)             | ⚠️ Chaotic but creative          | 🌟 Best (MATH-500 97.3%, AIME-2024 79.8%)        |
+| 📖 **Readability** | Clear + balanced                      | ❌ Mixed languages, unstable      | ✔️ Refined, polished outputs                     |
+| 📚 **Knowledge**   | 🌐 Wide factual coverage (MMLU, GPQA) | Narrow, less factual depth       | 🎯 Focused reasoning > breadth                   |
+| 💻 **Coding**      | Solid (SWE-Bench \~42%)               | ⚠️ Weak / unstable               | 🥇 Excellent (Codeforces \~96%)                  |
+| 🔑 **Strength**    | 🎨 Versatile all-rounder              | 🧪 Experimental proof-of-concept | 🏆 Refined reasoning + polished usability        |
+
+---
+
+### 📝 Key Takeaways
+
+* **DeepSeek-V3** → the **generalist**: balanced across knowledge, reasoning, and coding.
+* **DeepSeek-R1-Zero** → the **lab experiment**: pure RL, interesting but unstable.
+* **DeepSeek-R1** → the **reasoning champion**: top benchmarks + refined usability.
+
+---
+<img width="3840" height="566" alt="llm_posttraining_hard_reason" src="https://github.com/user-attachments/assets/a1868821-c753-4d20-bda0-3e3643b4966a" />
+
+
+---
+---
 
 
 ---
