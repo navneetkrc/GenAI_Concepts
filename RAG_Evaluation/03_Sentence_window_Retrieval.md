@@ -77,3 +77,7 @@ Contiguous context keeps the model on-topic for more accurate responses.
 * It’s ideal for queries requiring nuanced or multi-sentence understanding.
 * Careful tuning of window size and chunk balance ensures coherent, on-topic outputs within token constraints.
 
+---
+<img width="3840" height="1892" alt="code_flow_diagram" src="https://github.com/user-attachments/assets/9d73146c-e97d-486d-ba89-d7b3f31757e3" />
+
+
